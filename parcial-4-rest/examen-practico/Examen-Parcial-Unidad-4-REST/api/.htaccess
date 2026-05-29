@@ -1,0 +1,12 @@
+# Activar motor de reescritura
+RewriteEngine On
+
+# Base de la API (ajusta según tu carpeta)
+RewriteBase /RESTFUL/api/
+
+# Si el archivo o carpeta no existe...
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# ...redirigir todo a index.php
+RewriteRule ^ index.php [QSA,L]
